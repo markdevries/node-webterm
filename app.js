@@ -6,8 +6,11 @@ var http = require('http'),
 
 var config = require('./config.json');
 
+var ip = require("ip");
+
+
 var server = http.createServer()
-	.listen(config.port, config.interface);
+	.listen(config.port, ip.address);
 
 var ptys = {};
 
